@@ -100,7 +100,7 @@ RMSE Radar Only:
   </tr>
   <tr>
     <td><img src="./dataset1/sim_total.png" width="350" height="200"/></td>
-    <td><img src="./dataser1/sim_laser.png" width="350" height="200"/></td>
+    <td><img src="./dataset1/sim_laser.png" width="350" height="200"/></td>
     <td><img src="./dataset1/sim_radar.png" width="350" height="200"/></td>
   </tr>
   <tr>
