@@ -1,57 +1,24 @@
-# Extended Kalman Filter Project Starter Code
-Self-Driving Car Engineer Nanodegree Program
+# Extended Kalman Filter Project
 
 In this project you will utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
 
+The goals / steps of this project are the following:
+
+* Step 1: Initializing kalman filter matrices and vectors 
+* Step 2: Predicting state vector (px, py, vx, vy) and state covariance matrix 
+* Step 3: Updating predicted states based on sensor measurements
+* Step 4: Calculating rmse
+
+Goals:
+* Utilizing kalman filter to estimate the state of a moving object with lidar and radar mesaurments
+* Achieving low RMSE values  
+
+### Build & Run Instruction
 This project involves the Term 2 Simulator which can be downloaded [here](https://github.com/udacity/self-driving-car-sim/releases)
 
 This repository includes two files that can be used to set up and install [uWebSocketIO](https://github.com/uWebSockets/uWebSockets) for either Linux or Mac systems. For windows you can use either Docker, VMware, or even [Windows 10 Bash on Ubuntu](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) to install uWebSocketIO. 
 
 Once the install for uWebSocketIO is complete, the main program can be built and run by doing the following from the project top directory.
-
-1. mkdir build
-2. cd build
-3. cmake ..
-4. make
-5. ./ExtendedKF
-
-Note that the programs that need to be written to accomplish the project are src/FusionEKF.cpp, src/FusionEKF.h, kalman_filter.cpp, kalman_filter.h, tools.cpp, and tools.h
-
-The program main.cpp has already been filled out, but feel free to modify it.
-
-Here is the main protcol that main.cpp uses for uWebSocketIO in communicating with the simulator.
-
-
-INPUT: values provided by the simulator to the c++ program
-
-["sensor_measurement"] => the measurement that the simulator observed (either lidar or radar)
-
-
-OUTPUT: values provided by the c++ program to the simulator
-
-["estimate_x"] <= kalman filter estimated position x
-["estimate_y"] <= kalman filter estimated position y
-["rmse_x"]
-["rmse_y"]
-["rmse_vx"]
-["rmse_vy"]
-
----
-
-## Other Important Dependencies
-
-* cmake >= 3.5
-  * All OSes: [click here for installation instructions](https://cmake.org/install/)
-* make >= 4.1
-  * Linux: make is installed by default on most Linux distros
-  * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
-  * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
-* gcc/g++ >= 5.4
-  * Linux: gcc / g++ is installed by default on most Linux distros
-  * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
-  * Windows: recommend using [MinGW](http://www.mingw.org/)
-
-## Basic Build Instructions
 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
@@ -59,14 +26,169 @@ OUTPUT: values provided by the c++ program to the simulator
    * On windows, you may need to run: `cmake .. -G "Unix Makefiles" && make`
 4. Run it: `./ExtendedKF `
 
-## Editor Settings
+### Report
 
-We've purposefully kept editor configuration files out of this repo in order to
-keep it as simple and environment agnostic as possible. However, we recommend
-using the following settings:
+#### Data 1
 
-* indent using spaces
-* set tab width to 2 spaces (keeps the matrices in source code aligned)
+* Using both Radar & Laser Measurment:
+
+AVG RMSE:
+<table style="width:100%">
+  <tr>
+    <td>px </td>
+    <td>py </td>
+    <td>vx </td>
+    <td>vy </td>
+  </tr>
+  <tr>
+    <td>0.101571852</td>
+    <td>0.090215542</td>
+    <td>0.755310209</td>
+    <td>0.548474351</td>
+  </tr>
+</table>
+
+AVG Laser Only:
+<table style="width:100%">
+  <tr>
+    <td>px </td>
+    <td>py </td>
+    <td>vx </td>
+    <td>vy </td>
+  </tr>
+  <tr>
+    <td>0.126039845</td>
+    <td>0.098318484</td>
+    <td>0.87654452</td>
+    <td>0.471128396</td>
+  </tr>
+</table>
+
+AVG Radar Only:
+<table style="width:100%">
+  <tr>
+    <td>px </td>
+    <td>py </td>
+    <td>vx </td>
+    <td>vy </td>
+  </tr>
+  <tr>
+    <td>0.200919826</td>
+    <td>0.239360009</td>
+    <td>0.460775364</td>
+    <td>0.714843602</td>
+  </tr>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td>RMSE Total</td>
+    <td>RMSE Laser only</td>
+    <td>RMSE Radar only</td>
+  </tr>
+  <tr>
+    <td><img src="./data1/rmse_total.png" width="350" height="200"/></td>
+    <td><img src="./data1/rmse_laser.png" width="350" height="200"/></td>
+    <td><img src="./data1/rmse_radar.png" width="350" height="200"/></td>
+  </tr>
+  <tr>
+<table>
+
+<table style="width:100%">
+  <tr>
+    <td>Simulator Total</td>
+    <td>Simulator Laser only</td>
+    <td>Simulator Radar only</td>
+  </tr>
+  <tr>
+    <td><img src="./data1/sim_total.png" width="350" height="200"/></td>
+    <td><img src="./data1/sim_laser.png" width="350" height="200"/></td>
+    <td><img src="./data1/sim_radar.png" width="350" height="200"/></td>
+  </tr>
+  <tr>
+<table>
+
+
+
+#### Data 2
+
+* Using both Radar & Laser Measurment:
+
+AVG RMSE:
+<table style="width:100%">
+  <tr>
+    <td>px </td>
+    <td>py </td>
+    <td>vx </td>
+    <td>vy </td>
+  </tr>
+  <tr>
+    <td>0.069098066</td>
+    <td>0.088632142</td>
+    <td>0.697019243</td>
+    <td>0.661271259</td>
+  </tr>
+</table>
+
+AVG Laser Only:
+<table style="width:100%">
+  <tr>
+    <td>px </td>
+    <td>py </td>
+    <td>vx </td>
+    <td>vy </td>
+  </tr>
+  <tr>
+    <td>0.091197524</td>
+    <td>0.097981478</td>
+    <td>0.791264839</td>
+    <td>0.472911087</td>
+  </tr>
+</table>
+
+AVG Radar Only:
+<table style="width:100%">
+  <tr>
+    <td>px </td>
+    <td>py </td>
+    <td>vx </td>
+    <td>vy </td>
+  </tr>
+  <tr>
+    <td>0.223615637</td>
+    <td>0.235410359</td>
+    <td>0.910446286</td>
+    <td>1.006735722</td>
+  </tr>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td>RMSE Total</td>
+    <td>RMSE Laser only</td>
+    <td>RMSE Radar only</td>
+  </tr>
+  <tr>
+    <td><img src="./data1/rmse_total.png" width="350" height="200"/></td>
+    <td><img src="./data1/rmse_laser.png" width="350" height="200"/></td>
+    <td><img src="./data1/rmse_radar.png" width="350" height="200"/></td>
+  </tr>
+  <tr>
+<table>
+
+<table style="width:100%">
+  <tr>
+    <td>Simulator Total</td>
+    <td>Simulator Laser only</td>
+    <td>Simulator Radar only</td>
+  </tr>
+  <tr>
+    <td><img src="./data1/sim_total.png" width="350" height="200"/></td>
+    <td><img src="./data1/sim_laser.png" width="350" height="200"/></td>
+    <td><img src="./data1/sim_radar.png" width="350" height="200"/></td>
+  </tr>
+  <tr>
+<table>
 
 ## Code Style
 
