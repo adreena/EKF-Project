@@ -40,10 +40,10 @@ int main()
   vector<VectorXd> ground_truth;
 
   // To Store results
-  // ofstream result_file;
-  // result_file.open ("result_1_radar.csv");
+  ofstream result_file;
+  // result_file.open ("data1/P_cov_laser.csv");
 
-  h.onMessage([ &fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
+  h.onMessage([&result_file, &fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
     // The 2 signifies a websocket event
@@ -138,10 +138,10 @@ int main()
           msgJson["rmse_vx"] = RMSE(2);
           msgJson["rmse_vy"] = RMSE(3);
           //keep RMSE in result_file for analysis
-          // result_file << RMSE(0)<<","<<RMSE(1)<<","<<RMSE(2)<<","<<RMSE(3)<<"\n";
+          // result_file << (0)<<","<<RMSE(1)<<","<<RMSE(2)<<","<<RMSE(3)<<"\n";
           auto msg = "42[\"estimate_marker\"," + msgJson.dump() + "]";
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
-          // }
+        //   }
         //   else {
           
         //   std::string msg = "42[\"manual\",{}]";
