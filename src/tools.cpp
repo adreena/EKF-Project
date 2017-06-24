@@ -21,9 +21,14 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
   VectorXd total = VectorXd(4);
   total << 0, 0, 0, 0 ;
 
-  // ground truth is always greater or equal to estimates
-  // becuase estimations are pushed back to the list once their process is finished
-  // while ground truth is directly pushed to its list once sensor data is received
+  // chec
+	// estimations vector should not be empty
+	// estimation vector and ground truth vector should have smae size
+	if(estimations.size() != ground_truth.size() || estimations.size() == 0){
+		cout << "CalculateRMSE () - Sizes don't match" << endl;
+		return rmse;
+	}
+
   for(int i = 0 ; i < estimations.size(); i++){
     VectorXd residual = estimations[i] - ground_truth[i];
     residual = residual.array() * residual.array();
@@ -60,6 +65,6 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
 	  return Hj;
 	}
 
-	std::cout << "CalculateJacobian () - Error - Underflow. Zero out the Jacobian" << std::endl;
+	cout << "CalculateJacobian () - Not meeting the threshold" << endl;
 	return Hj;
 }

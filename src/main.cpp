@@ -2,7 +2,7 @@
 #include <iostream>
 #include "json.hpp"
 #include <math.h>
-#include <fstream>
+// #include <fstream>
 #include "FusionEKF.h"
 #include "tools.h"
 
@@ -40,10 +40,10 @@ int main()
   vector<VectorXd> ground_truth;
 
   // To Store results
-  ofstream result_file;
+  // ofstream result_file;
   // result_file.open ("data1/P_cov_laser.csv");
 
-  h.onMessage([&result_file, &fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
+  h.onMessage([&fusionEKF,&tools,&estimations,&ground_truth](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
     // The 4 signifies a websocket message
     // The 2 signifies a websocket event

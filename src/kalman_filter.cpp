@@ -29,7 +29,6 @@ void KalmanFilter::Predict() {
   */
   x_ = F_ * x_;
   P_ = F_ * P_ * F_.transpose() + Q_;
-  cout << "P_ estimated: "<<P_<<endl;
 }
 
 void KalmanFilter::Update(const VectorXd &z) {
@@ -75,9 +74,6 @@ void KalmanFilter::Update_Helper(const VectorXd &y){
   MatrixXd I = MatrixXd::Identity(x_.size(), x_.size());
   //applying updates to estimate values
   x_ = x_ + K_gain * y; 
-  cout << "K_gain :"<< K_gain<<endl;
-  cout << "P_ before: "<<P_<<endl;
   P_ = (I - K_gain * H_) * P_;
-  cout << "P_after: "<<P_<<endl;
 
 }
