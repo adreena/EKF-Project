@@ -184,5 +184,4 @@ RMSE Radar Only:
   <tr>
 <table>
 
-According to the plots and avg RMSE values, considering both sensor information obviously generates more accurate results. However on both datasets LASER tends to be more precise than RADAR overall. 
-But eliminating 1 sensor results in missing almost half of the data from simulator. (total number of data ~440, laser-only:~220 , radar-only:~220)
+According to the plots and avg RMSE values, considering both sensor information obviously generates more accurate results. However by eliminating 1 sensor which results in missing almost half of the data from simulator, (total number of data ~440, laser-only:~220 , radar-only:~220) LASER tends to be more precise than RADAR on both datasets.
