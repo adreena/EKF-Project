@@ -60,6 +60,8 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
   hx << rho, phi, rho_dot;
 
   VectorXd y = z - hx;  
+
+  //normalizing angle
   if(y(1) > PI)
     y(1) = y(1) -  2*PI;
   else if (y(1) < -1*PI)
