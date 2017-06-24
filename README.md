@@ -32,7 +32,7 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 
 * Using both Radar & Laser Measurment:
 
-AVG RMSE:
+RMSE Total:
 <table style="width:100%">
   <tr>
     <td>px </td>
@@ -41,14 +41,14 @@ AVG RMSE:
     <td>vy </td>
   </tr>
   <tr>
-    <td>0.101571852</td>
-    <td>0.090215542</td>
-    <td>0.755310209</td>
-    <td>0.548474351</td>
+    <td>0.0975829</td>
+    <td>0.0865559</td>
+    <td>0.</td>
+    <td>0.448438</td>
   </tr>
 </table>
 
-AVG Laser Only:
+RMSE Laser Only:
 <table style="width:100%">
   <tr>
     <td>px </td>
@@ -57,14 +57,14 @@ AVG Laser Only:
     <td>vy </td>
   </tr>
   <tr>
-    <td>0.126039845</td>
-    <td>0.098318484</td>
-    <td>0.87654452</td>
-    <td>0.471128396</td>
+    <td>0.126304</td>
+    <td>0.0976934</td>
+    <td>0.60724</td>
+    <td>0.457049</td>
   </tr>
 </table>
 
-AVG Radar Only:
+RMSE Radar Only:
 <table style="width:100%">
   <tr>
     <td>px </td>
@@ -73,10 +73,10 @@ AVG Radar Only:
     <td>vy </td>
   </tr>
   <tr>
-    <td>0.200919826</td>
-    <td>0.239360009</td>
-    <td>0.460775364</td>
-    <td>0.714843602</td>
+    <td>0.185953</td>
+    <td>0.283136</td>
+    <td>0.456911</td>
+    <td>0.696011</td>
   </tr>
 </table>
 
@@ -108,7 +108,8 @@ AVG Radar Only:
   <tr>
 <table>
 
-
+According to the plots and avg RMSE values, considering both sensor information obviously generates more accurate results. However on dataset-1 LASER tends to be more precise than RADAR for (px & py) and less acurate for (vx,vy), while on dataset-2 LASER acheives a better RMSE than RADAR overall. 
+It's also worth mentioning that eliminating 1 sensor results in missing almost half of the data from simulator. (total number of data ~440, laser-only:~220 , radar-only:~220)
 
 #### Data 2
 
