@@ -30,8 +30,6 @@ Once the install for uWebSocketIO is complete, the main program can be built and
 
 #### Data 1
 
-* Using both Radar & Laser Measurment:
-
 RMSE Total:
 <table style="width:100%">
   <tr>
@@ -87,9 +85,9 @@ RMSE Radar Only:
     <td>RMSE Radar only</td>
   </tr>
   <tr>
-    <td><img src="./data1/rmse_total.png" width="350" height="200"/></td>
-    <td><img src="./data1/rmse_laser.png" width="350" height="200"/></td>
-    <td><img src="./data1/rmse_radar.png" width="350" height="200"/></td>
+    <td><img src="./dataset1/rmse_total.png" width="350" height="200"/></td>
+    <td><img src="./dataset1/rmse_laser.png" width="350" height="200"/></td>
+    <td><img src="./dataset1/rmse_radar.png" width="350" height="200"/></td>
   </tr>
   <tr>
 <table>
@@ -101,9 +99,9 @@ RMSE Radar Only:
     <td>Simulator Radar only</td>
   </tr>
   <tr>
-    <td><img src="./data1/sim_total.png" width="350" height="200"/></td>
-    <td><img src="./data1/sim_laser.png" width="350" height="200"/></td>
-    <td><img src="./data1/sim_radar.png" width="350" height="200"/></td>
+    <td><img src="./dataset1/sim_total.png" width="350" height="200"/></td>
+    <td><img src="./dataser1/sim_laser.png" width="350" height="200"/></td>
+    <td><img src="./dataset1/sim_radar.png" width="350" height="200"/></td>
   </tr>
   <tr>
 <table>
@@ -170,9 +168,9 @@ AVG Radar Only:
     <td>RMSE Radar only</td>
   </tr>
   <tr>
-    <td><img src="./data1/rmse_total.png" width="350" height="200"/></td>
-    <td><img src="./data1/rmse_laser.png" width="350" height="200"/></td>
-    <td><img src="./data1/rmse_radar.png" width="350" height="200"/></td>
+    <td><img src="./dataset2/rmse_total.png" width="350" height="200"/></td>
+    <td><img src="./dataset2/rmse_laser.png" width="350" height="200"/></td>
+    <td><img src="./dataset2/rmse_radar.png" width="350" height="200"/></td>
   </tr>
   <tr>
 <table>
@@ -184,9 +182,9 @@ AVG Radar Only:
     <td>Simulator Radar only</td>
   </tr>
   <tr>
-    <td><img src="./data1/sim_total.png" width="350" height="200"/></td>
-    <td><img src="./data1/sim_laser.png" width="350" height="200"/></td>
-    <td><img src="./data1/sim_radar.png" width="350" height="200"/></td>
+    <td><img src="./dataset2/sim_total.png" width="350" height="200"/></td>
+    <td><img src="./dataset2/sim_laser.png" width="350" height="200"/></td>
+    <td><img src="./dataset2/sim_radar.png" width="350" height="200"/></td>
   </tr>
   <tr>
 <table>
