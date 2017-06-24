@@ -72,7 +72,7 @@ void KalmanFilter::Update_Helper(const VectorXd &y){
   MatrixXd S = H_ * P_ * H_.transpose()  + R_;
   MatrixXd K_gain = P_ * H_.transpose() * S.inverse();
   MatrixXd I = MatrixXd::Identity(x_.size(), x_.size());
-  //aplying updates to estimate values
+  //applying updates to estimate values
   x_ = x_ + K_gain * y; 
   P_ = (I - K_gain * H_) * P_;
 

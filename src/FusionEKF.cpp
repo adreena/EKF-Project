@@ -95,10 +95,10 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       float rho_dot = measurement_pack.raw_measurements_(2);
       if(phi > PI){
           phi = phi -  2*PI;
-        }
-        else if (phi < -1*PI){
-          phi = phi+ 2*PI;
-        }
+      }
+      else if (phi < -1*PI){
+        phi = phi+ 2*PI;
+      }
       float px = rho * cos(phi);
       float py = rho * sin(phi);
       float vx = rho_dot * cos(phi);
@@ -110,8 +110,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       /**
       Initialize state.
       */
-      ekf_.x_ << measurement_pack.raw_measurements_[0] ,  measurement_pack.raw_measurements_[1], 0, 0;
-
+      ekf_.x_ << measurement_pack.raw_measurements_[0] , measurement_pack.raw_measurements_[1], 0, 0;
     }
     previous_timestamp_ = measurement_pack.timestamp_;
 
